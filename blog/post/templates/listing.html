@@ -5,8 +5,12 @@
     <h1>Posts</h1>
 </div>
 <div class="d-flex align-items-center flex-wrap justify-content-around">
-    {% for post in posts %}
-    <div class="card" style="width: 19rem; margin-bottom: 15px;" data-bs-theme="dark">
+{% for post in posts %}
+<!-- <h3>Title: {{ post.title }}</h3>
+<p>Body: {{ post.body }}</p>
+<p>Author: {{ post.author.email }}</p>
+<span>Created at: {{ post.created_at }}</span> -->
+<div class="card" style="width: 19rem; margin-bottom: 15px;" data-bs-theme="dark">
     <div class="card-body">
       <h5 class="card-title">{{ post.title }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.author.email }}</h6>
@@ -20,3 +24,5 @@
 </div>
 
 {% endblock %}
+
+
