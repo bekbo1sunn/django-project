@@ -18,6 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from post.views import post_list, posts_list_api_view, posts_details, create_post, delete_post, update_post
 from review.views import toggle_like
+from account.views import RegisterUserAPIView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +33,10 @@ urlpatterns = [
     path('api/create/', create_post),
     path('api/delete/<int:id>/', delete_post),
     path('api/update/<int:id>/', update_post),
-    path('api/like/<int:id>/', toggle_like)
+    path('api/like/<int:id>/', toggle_like),
+    path('api/register/', RegisterUserAPIView.as_view()),
+    path('api/token/', TokenObtainPairView.as_view()),
+    path('api/token/refresh/', TokenRefreshView.as_view()),
 ]
 
 
