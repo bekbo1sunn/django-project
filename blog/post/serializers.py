@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Post
 from review.serializers import CommentSerializer
+
+from .models import Post
 
 
 class PostSerializer(ModelSerializer):
